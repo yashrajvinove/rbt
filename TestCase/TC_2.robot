@@ -41,7 +41,7 @@ LoginTest3
    Sleep    1
    ${verify}=  Page Should Contain Element               //span[@class='mr-2']        You have successfully logged in!
    Run keyword if   ${verify}  =   You have successfully logged in!    Test Keyword 1
-   Log To Console    successfull
+   Log To Console    successfull login
 
   # ELSE
   # Log To Console     unsucessfull
