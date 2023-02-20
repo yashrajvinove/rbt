@@ -46,9 +46,10 @@ LoginTest3
   # ELSE
   # Log To Console     unsucessfull
    Page Should Contain Element      class:brand-logo
-   Mouse Down    //span[normalize-space()='User Management']
-   Mouse Up      //span[normalize-space()='User Management']
+   Mouse Down    //span[text()='User Management']
+   Mouse Up      //span[text()='User Management']
    Sleep    3
+
    Go To     https://propftxdevadmin.iworklab.com/transactions
    Sleep    3
    Close Browser
