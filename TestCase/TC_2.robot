@@ -51,7 +51,35 @@ LoginTest3
    Sleep    3
 
    Go To     https://propftxdevadmin.iworklab.com/transactions
+
+   Reload Page
+
+UserManagement
+   Set Selenium Speed    3seconds
+   Wait Until Element Is Visible    xpath://span[text()='User Management']
+   Click Element    xpath://span[text()='User Management']
+   Wait Until Element Is Visible    xpath:(//span[text()='Add'])[1]
+   Click Element    xpath:(//span[text()='Add'])[1]
+   Sleep    10
+   Wait Until Element Is Visible    xpath://h1[text()='Add New User']
+   ${NewUser}=   Page Should Contain Element     xpath://h1[text()='Add New User']     Add New User
+   Run Keyword If  ${NewUser}   =    Add New User     Test Keyword 1
+   Log To Console    title verified
+   Input Text    id:name    Yash test 1
+   Input Text    id:address    Noida
+   Input Text    id:phoneNumber    9548779463
+   Click Element    xpath:(//div[@class='select__input-container css-ackcql'])[1]
    Sleep    3
+   Input Text            xpath:(//div[@class='select__input-container css-ackcql'])[1]       Andorra
+   Click Element    xpath:(//div[@class='select__input-container css-ackcql'])[1]
+   Click Element    xpath:(//div[@class='select__input-container css-ackcql'])[2]
+   Input Text      (//div[@class='select__input-container css-ackcql'])[2]      Encamp
+   Click Element    xpath:(//div[@class='select__input-container css-ackcql'])[2]
+
+   #Input Text       id:email
+   #Click Button    xpath://button[@type='submit']
+
+   Sleep    10
    Close Browser
 *** Keywords ***
 Test Keyword 1
